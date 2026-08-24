@@ -1,0 +1,52 @@
+# =========================
+# Frontend
+# =========================
+
+moneyflow_frontend/node_modules/
+moneyflow_frontend/dist/
+
+# =========================
+# Backend - Maven
+# =========================
+
+moneyflow_backend/target/
+
+# =========================
+# Eclipse
+# =========================
+
+moneyflow_backend/.classpath
+moneyflow_backend/.project
+moneyflow_backend/.settings/
+moneyflow_backend/.springBeans
+moneyflow_backend/.sts4-cache
+
+# =========================
+# IDE
+# =========================
+
+.idea/
+.vscode/
+
+# =========================
+# Backend secrets
+# =========================
+
+moneyflow_backend/src/main/resources/application-local.properties
+
+# Environment files
+.env
+*.env
+
+# =========================
+# Logs
+# =========================
+
+*.log
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+Thumbs.db

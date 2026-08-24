@@ -1,0 +1,239 @@
+.transaction-form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.transaction-form-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 30px;
+    border-radius: 16px;
+    /* background: #15152b; */
+    /* background: transparent; */
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.transaction-form-card h2 {
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+}
+
+/* FORM */
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    color: #dcdcf5;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border-radius: 8px;
+    border: 1px solid #34345c;
+
+    background: #20203a;
+    color: white;
+
+    font-size: 15px;
+}
+
+.transaction-form-card button {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #09bde8;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.success-message {
+    color: #32d583;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: #ff5c5c;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   NEW CATEGORY
+===================================================== */
+
+.new-category-box {
+    width: 100%;
+
+    display: flex;
+    gap: 10px;
+
+    margin-top: 10px;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.new-category-box input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 11px;
+
+    border-radius: 8px;
+    border: 1px solid #34345c;
+
+    background: #20203a;
+    color: white;
+
+    font-size: 14px;
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.new-category-box input:focus {
+    border-color: #00d4ff;
+
+    box-shadow:
+        0 0 8px rgba(0, 212, 255, 0.15);
+}
+
+.new-category-box button {
+    width: auto;
+    flex-shrink: 0;
+
+    padding: 11px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00a9d4;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.new-category-box button:hover {
+    background: #00c4ef;
+    transform: translateY(-1px);
+}
+
+.new-category-box button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .transaction-form-container {
+        margin-top: 20px;
+        padding: 0 20px 30px;
+    }
+
+    .transaction-form-card {
+        max-width: 550px;
+        padding: 25px 20px;
+    }
+
+    .transaction-form-card h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .transaction-form-container {
+        margin-top: 15px;
+        padding: 0 12px 25px;
+    }
+
+    .transaction-form-card {
+        width: 100%;
+        padding: 20px 12px;
+    }
+
+    .transaction-form-card h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .transaction-form-card button {
+        padding: 11px;
+        font-size: 15px;
+    }
+
+    /* New category becomes stacked on very small screens */
+
+    .new-category-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .new-category-box input {
+        width: 100%;
+    }
+
+    .new-category-box button {
+        width: 100%;
+    }
+}

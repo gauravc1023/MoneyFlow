@@ -1,0 +1,137 @@
+/* =====================================================
+   COMMON MONEYFLOW DASHBOARD BACKGROUND
+===================================================== */
+
+.dashboard-page {
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    /* padding: 45px 6% 80px; */
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(0, 212, 255, 0.13),
+            transparent 30%),
+        radial-gradient(circle at 85% 15%,
+            rgba(120, 80, 255, 0.14),
+            transparent 30%),
+        radial-gradient(circle at 70% 85%,
+            rgba(0, 255, 180, 0.08),
+            transparent 30%),
+        #0d0d1f;
+}
+
+
+/* =====================================================
+   LEFT BLUE GLOW
+===================================================== */
+
+.dashboard-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: 100px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 212, 255, 0.20),
+            transparent 70%);
+
+    filter: blur(30px);
+
+    animation:
+        floatingGlow 10s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   RIGHT PURPLE GLOW
+===================================================== */
+
+.dashboard-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(150, 70, 255, 0.18),
+            transparent 70%);
+
+    filter: blur(25px);
+
+    animation:
+        floatingGlow2 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   ANIMATION 1
+===================================================== */
+
+@keyframes floatingGlow {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(120px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(40px, 180px) scale(0.9);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMATION 2
+===================================================== */
+
+@keyframes floatingGlow2 {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-100px, -80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-50px, -150px) scale(0.9);
+    }
+
+}

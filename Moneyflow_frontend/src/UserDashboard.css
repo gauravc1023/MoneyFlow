@@ -1,0 +1,1277 @@
+/* =====================================================
+   CHART SECTIONS
+===================================================== */
+
+.chart-section {
+    margin-bottom: 45px;
+}
+
+.chart-section h3,
+.pie-chart-section h3 {
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   PIE CHART
+===================================================== */
+
+.pie-chart-section {
+    margin-top: 35px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.pie-chart-container {
+
+    width: 100%;
+    height: 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Recharts tooltip */
+
+.recharts-tooltip-wrapper {
+    outline: none;
+}
+
+
+.recharts-default-tooltip {
+
+    background: #1b1b34 !important;
+
+    border: 1px solid #34345b !important;
+
+    border-radius: 8px !important;
+
+}
+
+
+/* Pie chart legend */
+
+.recharts-legend-item-text {
+    color: #d7d7e8 !important;
+}
+
+
+.recharts-text {
+    fill: #ffffff;
+}
+
+/* =====================================================
+   MAIN DASHBOARD
+===================================================== */
+
+.dashboard-page {
+
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    padding: 45px 6% 80px;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(0, 212, 255, 0.13),
+            transparent 30%),
+        radial-gradient(circle at 85% 15%,
+            rgba(120, 80, 255, 0.14),
+            transparent 30%),
+        radial-gradient(circle at 70% 85%,
+            rgba(0, 255, 180, 0.08),
+            transparent 30%),
+        #0d0d1f;
+
+}
+
+
+/* =====================================================
+   ANIMATED BACKGROUND
+===================================================== */
+
+.dashboard-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: 100px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 212, 255, 0.20),
+            transparent 70%);
+    /* rgba(0, 212, 255, 0.20), */
+    filter: blur(30px);
+
+    animation:
+        floatingGlow 10s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+}
+
+
+.dashboard-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(150, 70, 255, 0.18),
+            transparent 70%);
+
+    filter: blur(25px);
+
+    animation:
+        floatingGlow2 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes floatingGlow {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(120px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(40px, 180px) scale(0.9);
+    }
+
+}
+
+
+@keyframes floatingGlow2 {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-100px, -80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-50px, -150px) scale(0.9);
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.dashboard-header h1 {
+
+    margin: 0;
+
+    font-size: 42px;
+
+    color: #00d4ff;
+
+    letter-spacing: 1px;
+
+}
+
+
+.dashboard-header p {
+
+    margin-top: 8px;
+
+    color: #9b9999;
+
+    font-size: 25px;
+
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.summary-container {
+
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.2fr 1fr;
+
+    gap: 22px;
+
+    max-width: 1000px;
+
+    margin: 30px auto 0;
+
+}
+
+
+.summary-card {
+    width: 100%;
+    min-height: 120px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(27, 27, 52, 0.82);
+
+    border: 1px solid #2d2d55;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+
+}
+
+
+.summary-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.summary-card span {
+
+    font-size: 16px;
+
+    color: #aaaac7;
+
+}
+
+
+.summary-card h2 {
+
+    margin-top: 12px;
+
+    font-size: 28px;
+
+}
+
+
+.summary-card.income-card {
+    width: 250px;
+    border-top: 3px solid #25d98b;
+
+}
+
+
+.income-card h2 {
+
+    color: #25d98b;
+
+}
+
+
+.summary-card.balance-card {
+    width: 250px;
+    border: 2px solid #00d4ff;
+
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.15);
+
+}
+
+
+.balance-card h2 {
+
+    color: #00d4ff;
+
+    font-size: 32px;
+
+}
+
+
+.summary-card.expense-card {
+    width: 250px;
+    border-top: 3px solid #ff5b63;
+
+}
+
+
+.expense-card h2 {
+
+    color: #ff5b63;
+
+}
+
+
+/* =====================================================
+   FORM + ANALYTICS
+===================================================== */
+
+.dashboard-main-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 0 auto 30px;
+
+}
+
+
+/* =====================================================
+   PANELS
+===================================================== */
+
+.transaction-panel,
+.analytics-panel {
+
+    min-height: 430px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    /* background:
+        rgba(27, 27, 52, 0.85); */
+
+    background: transparent;
+    border: 1px solid #2e2e58;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.analytics-panel h2 {
+
+    margin-bottom: 30px;
+
+    font-size: 23px;
+
+}
+
+
+/* =====================================================
+   EXPENSE CHART
+===================================================== */
+
+.expense-chart {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+}
+
+
+.chart-row {
+
+    width: 100%;
+
+}
+
+
+.chart-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 9px;
+
+}
+
+
+.chart-label span {
+
+    color: #e4e4f4;
+
+    font-size: 15px;
+
+}
+
+
+.chart-label strong {
+
+    color: #00d4ff;
+
+}
+
+
+.chart-bar-background {
+
+    width: 100%;
+
+    height: 13px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #252542;
+
+}
+
+
+.chart-bar {
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(90deg,
+            #00d4ff,
+            #0087ff);
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.45);
+
+    animation: chartAnimation 1s ease;
+
+}
+
+
+@keyframes chartAnimation {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+.no-data {
+
+    color: #8888a5;
+
+    text-align: center;
+
+    margin-top: 80px;
+
+}
+
+
+/* =====================================================
+   FILTER / SEARCH / SORT
+===================================================== */
+
+.transaction-controls {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto 25px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 15px;
+
+    border-radius: 15px;
+
+    /* background:
+        rgba(27, 27, 52, 0.82); */
+
+    background: transparent;
+    border: 1px solid #2d2d55;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.transaction-controls input,
+.transaction-controls select {
+
+    padding: 13px 15px;
+
+    border-radius: 9px;
+
+    border: 1px solid #36365f;
+
+    /* background: #06062929; */
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+.transaction-controls select option {
+    background-color: #1d1d36;
+}
+
+.transaction-controls input:focus,
+.transaction-controls select:focus {
+
+    border-color: #00d4ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.15);
+
+}
+
+
+/* =====================================================
+   TRANSACTIONS
+===================================================== */
+
+.transactions-panel {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    /* background:
+        rgba(27, 27, 52, 0.88); */
+    background: transparent;
+    border: 1px solid #2e2e58;
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.transactions-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.transactions-header h2 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.transactions-header span {
+
+    color: #8d8da8;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.transactions-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.transactions-table th {
+
+    padding: 15px;
+
+    text-align: left;
+
+    color: #00d4ff;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #34345b;
+
+}
+
+
+.transactions-table td {
+
+    padding: 15px;
+
+    color: #d7d7e8;
+
+    border-bottom: 1px solid rgba(70, 70, 100, 0.35);
+
+}
+
+
+.transactions-table tbody tr {
+
+    transition: 0.25s;
+
+}
+
+
+.transactions-table tbody tr:hover {
+
+    background:
+        rgba(0, 212, 255, 0.05);
+
+}
+
+
+/* =====================================================
+   TRANSACTION TYPES
+===================================================== */
+
+.type-income {
+
+    color: #25d98b;
+
+    font-weight: 600;
+
+}
+
+
+.type-expense {
+
+    color: #ff5b63;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.edit-button,
+.delete-button {
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: 600;
+
+    margin-right: 7px;
+
+}
+
+
+.edit-button {
+
+    background: #00a9d4;
+
+}
+
+
+.delete-button {
+
+    background: #e84c59;
+
+}
+
+
+.edit-button:hover,
+.delete-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-message {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #9999b4;
+
+}
+
+.monthly-summary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr); */
+    gap: 20px;
+    margin: 25px;
+}
+
+/* .summary-cards {
+    width: 1985.3px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+} */
+.summary-cards {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 20px;
+    padding: 15px;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.monthly-summary-card {
+
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 170px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #191936;
+    border: 1px solid #30305c;
+}
+
+.monthly-summary-card span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.monthly-summary-card h2 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* =====================================================
+   MONTH NAVIGATION
+===================================================== */
+
+.month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    margin: 25px auto;
+    padding: 15px 20px;
+
+    max-width: 600px;
+
+    background: rgba(27, 27, 52, 0.85);
+
+    border: 1px solid #2d2d55;
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Month name */
+
+.month-navigation h2 {
+    min-width: 180px;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #00d4ff;
+
+    font-size: 22px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Navigation buttons */
+
+.month-navigation button {
+
+    padding: 10px 18px;
+
+    border: 1px solid #00d4ff;
+
+    border-radius: 8px;
+
+    background: rgba(0, 212, 255, 0.08);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.month-navigation button:hover {
+
+    background: #00d4ff;
+
+    color: #101020;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+
+/* Click effect */
+
+.month-navigation button:active {
+
+    transform: translateY(0);
+
+}
+
+.month-navigation button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.month-navigation button:disabled:hover {
+    background: rgba(0, 212, 255, 0.08);
+    color: #ffffff;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+
+/* ==============================
+   LARGE TABLET / SMALL LAPTOP
+============================== */
+
+@media (max-width: 1100px) {
+
+    .dashboard-page {
+        padding: 35px 4% 60px;
+    }
+
+    .summary-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+    }
+
+    .transaction-controls {
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+    }
+
+    .transaction-controls input {
+        grid-column: 1 / -1;
+    }
+
+    .transactions-panel {
+        max-width: 800px;
+    }
+
+    .monthly-summary-card {
+        min-width: 220px;
+    }
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-page {
+        padding: 30px 20px 50px;
+    }
+
+
+    /* Header */
+
+    .dashboard-header {
+        margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 32px;
+    }
+
+    .dashboard-header p {
+        font-size: 18px;
+    }
+
+
+    /* Summary */
+
+    .summary-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .summary-card {
+        min-height: 100px;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    .summary-card.income-card,
+    .summary-card.balance-card,
+    .summary-card.expense-card {
+        width: 100%;
+    }
+
+    .summary-card span {
+        font-size: 14px;
+    }
+
+    .summary-card h2 {
+        font-size: 23px;
+    }
+
+
+    /* Main dashboard */
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .transaction-panel,
+    .analytics-panel {
+        padding: 22px;
+        min-height: auto;
+    }
+
+
+    /* Controls */
+
+    .transaction-controls {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .transaction-controls input {
+        grid-column: auto;
+    }
+
+
+    /* Transactions */
+
+    .transactions-panel {
+        padding: 20px;
+    }
+
+    .transactions-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+
+    /* Month navigation */
+
+    .month-navigation {
+        width: 100%;
+        box-sizing: border-box;
+
+        gap: 15px;
+        padding: 12px 15px;
+    }
+
+    .month-navigation h2 {
+        min-width: auto;
+        font-size: 19px;
+    }
+
+    .month-navigation button {
+        padding: 8px 12px;
+    }
+
+
+    /* Monthly summary */
+
+    .monthly-summary-container {
+        margin: 15px 0;
+    }
+
+    .summary-cards {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .monthly-summary-card {
+        min-width: 200px;
+        flex: 1 1 200px;
+    }
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 480px) {
+
+    .dashboard-page {
+        padding: 25px 12px 40px;
+    }
+
+
+    /* Header */
+
+    .dashboard-header h1 {
+        font-size: 27px;
+    }
+
+    .dashboard-header p {
+        font-size: 16px;
+    }
+
+
+    /* Summary cards */
+
+    .summary-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .summary-card {
+        width: 100%;
+        min-height: 90px;
+        padding: 16px;
+    }
+
+    .summary-card h2 {
+        font-size: 22px;
+    }
+
+
+    /* Main panels */
+
+    .transaction-panel,
+    .analytics-panel {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+
+    /* Transaction controls */
+
+    .transaction-controls {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .transaction-controls input,
+    .transaction-controls select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Transaction panel */
+
+    .transactions-panel {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .transactions-header h2 {
+        font-size: 20px;
+    }
+
+
+    /* Table */
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .transactions-table {
+        min-width: 650px;
+    }
+
+    .transactions-table th,
+    .transactions-table td {
+        padding: 12px;
+        white-space: nowrap;
+    }
+
+
+    /* Buttons */
+
+    .edit-button,
+    .delete-button {
+        padding: 7px 11px;
+        font-size: 13px;
+    }
+
+
+    /* Month navigation */
+
+    .month-navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .month-navigation h2 {
+        width: 100%;
+        font-size: 18px;
+        order: -1;
+    }
+
+    .month-navigation button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+
+    /* Monthly cards */
+
+    .summary-cards {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .monthly-summary-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* Pie chart */
+
+    .pie-chart-container {
+        height: 260px;
+    }
+}

@@ -1,0 +1,1272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    min-height: 100vh;
+    background: #171729;
+    overflow-x: hidden;
+
+    display: flex;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.auth-container {
+    width: 100%;
+    min-height: calc(100vh - 68px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =====================================================
+   AUTH PAGE BACKGROUND
+===================================================== */
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #0d0d1f;
+    color: white;
+}
+
+.auth-page::before {
+    content: "";
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: 100px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+            rgba(0, 212, 255, 0.20),
+            transparent 70%);
+
+    filter: blur(30px);
+
+    animation: authGlow1 10s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+.auth-page::after {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+            rgba(150, 70, 255, 0.18),
+            transparent 70%);
+
+    filter: blur(25px);
+
+    animation: authGlow2 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes authGlow1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(120px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(40px, 180px) scale(0.9);
+    }
+}
+
+@keyframes authGlow2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-100px, -80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-50px, -150px) scale(0.9);
+    }
+}
+
+/* =====================================================
+   AUTH WRAPPER
+===================================================== */
+
+.auth-wrapper {
+    position: relative;
+
+
+    width: min(800px, 95vw);
+    min-height: 600px;
+    border: 2px solid #00d4ff;
+
+    box-shadow:
+        0 0 25px #00d4ff;
+
+    overflow: hidden;
+
+    background: #1a1a2e;
+}
+
+
+/* =====================================================
+   CREDENTIAL PANELS
+===================================================== */
+
+.auth-wrapper .credentials-panel {
+    position: absolute;
+
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   LOGIN PANEL
+===================================================== */
+
+.credentials-panel.signin {
+    left: 0;
+
+    padding: 0 55px;
+
+
+}
+
+
+/* =====================================================
+   REGISTER PANEL
+===================================================== */
+
+.credentials-panel.signup {
+    right: 0;
+
+    padding: 25px 55px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+.credentials-panel h2 {
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.credentials-panel form {
+    width: 100%;
+}
+
+
+/* =====================================================
+   INPUT FIELD
+===================================================== */
+
+.field-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 42px;
+
+    margin-top: 18px;
+}
+
+
+.field-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    padding-right: 30px;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 2px solid #fff;
+
+    outline: none;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+
+.field-wrapper input:focus,
+.field-wrapper input:valid {
+    border-bottom-color: #00d4ff;
+}
+
+
+/* =====================================================
+   INPUT LABEL
+===================================================== */
+
+.field-wrapper label {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #fff;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.field-wrapper input:focus~label,
+.field-wrapper input:not(:placeholder-shown)~label {
+    top: -8px;
+    transform: translateY(0);
+    font-size: 13px;
+}
+
+.field-wrapper input:focus~label,
+.field-wrapper input:valid~label {
+    top: -3px;
+
+    color: #00d4ff;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   INPUT ICON
+===================================================== */
+
+.field-wrapper i {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #fff;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+
+.field-wrapper input:focus~i,
+.field-wrapper input:valid~i {
+    color: #00d4ff;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-button {
+    position: relative;
+
+    width: 100%;
+    height: 42px;
+
+    margin-top: 2px;
+
+    background: transparent;
+
+    border: 2px solid #00d4ff;
+    border-radius: 30px;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.submit-button::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: -100%;
+
+    width: 100%;
+    height: 300%;
+
+    background:
+        linear-gradient(#1a1a2e,
+            #00d4ff,
+            #1a1a2e,
+            #00d4ff);
+
+    transition: 0.5s;
+
+    z-index: -1;
+}
+
+
+.submit-button:hover::before {
+    top: 0;
+}
+
+
+/* =====================================================
+   SWITCH LINK
+===================================================== */
+
+.switch-link {
+    margin: 15px 0 0;
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 12px;
+}
+
+
+.switch-link p {
+    line-height: 1.6;
+}
+
+
+.switch-link span {
+    color: #00d4ff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.switch-link span:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   ROLE SELECTION
+===================================================== */
+
+.role-selection {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 5px;
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        filter 0.7s ease;
+}
+
+/* USER / ADMIN BUTTON */
+
+.role-card {
+    width: 110px;
+    height: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    background: transparent;
+
+    border: 1px solid #00d4ff;
+    border-radius: 20px;
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.role-card i {
+    font-size: 12px;
+}
+
+
+.role-card:hover {
+    background: rgba(0, 212, 255, 0.15);
+}
+
+
+.role-card.active {
+    background:
+        linear-gradient(135deg,
+            #08bde8,
+            #087da5);
+
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER ANIMATION
+===================================================== */
+
+.slide-element {
+    transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+/* -----------------------------------------------------
+   LOGIN - INITIAL
+----------------------------------------------------- */
+
+.credentials-panel.signin .slide-element {
+    transform: translateX(0);
+
+    opacity: 1;
+
+    filter: blur(0);
+}
+
+
+.credentials-panel.signin .slide-element:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+
+.credentials-panel.signin .slide-element:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+
+.credentials-panel.signin .slide-element:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+
+.credentials-panel.signin .slide-element:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+
+/* -----------------------------------------------------
+   LOGIN - WHEN REGISTER IS ACTIVE
+----------------------------------------------------- */
+
+.auth-wrapper.toggled .credentials-panel.signin .slide-element {
+    transform: translateX(-120%);
+
+    opacity: 0;
+
+    filter: blur(10px);
+}
+
+
+/* -----------------------------------------------------
+   REGISTER - INITIAL
+----------------------------------------------------- */
+
+.credentials-panel.signup .slide-element {
+    transform: translateX(120%);
+
+    opacity: 0;
+
+    filter: blur(10px);
+}
+
+
+/* -----------------------------------------------------
+   REGISTER - WHEN ACTIVE
+----------------------------------------------------- */
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element {
+    transform: translateX(0);
+
+    opacity: 1;
+
+    filter: blur(0);
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(5) {
+    transition-delay: 0.6s;
+}
+
+
+.auth-wrapper.toggled .credentials-panel.signup .slide-element:nth-child(6) {
+    transition-delay: 0.7s;
+}
+
+
+/* =====================================================
+   WELCOME SECTIONS
+===================================================== */
+
+.welcome-section {
+    position: absolute;
+
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 4;
+}
+
+
+/* =====================================================
+   LOGIN WELCOME
+===================================================== */
+
+.welcome-section.signin {
+    right: 0;
+
+    padding: 0 45px 40px 120px;
+
+    text-align: right;
+
+    transform: translateY(-10px);
+}
+
+
+.welcome-section.signin .slide-element {
+    transform: translateX(0);
+
+    opacity: 1;
+
+    filter: blur(0);
+
+    transition: 0.7s ease;
+}
+
+
+.auth-wrapper.toggled .welcome-section.signin .slide-element {
+    transform: translateX(120%);
+
+    opacity: 0;
+
+    filter: blur(10px);
+}
+
+
+/* =====================================================
+   REGISTER WELCOME
+===================================================== */
+
+.welcome-section.signup {
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    padding: 0 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transform: translateX(-20px) translateY(0px);
+
+    pointer-events: none;
+}
+
+
+.welcome-section.signup .slide-element {
+    transform: translateX(-120%);
+
+    opacity: 0;
+
+    filter: blur(10px);
+
+    transition: 0.7s ease;
+}
+
+
+.auth-wrapper.toggled .welcome-section.signup .slide-element {
+    transform: translateX(0);
+
+    opacity: 1;
+
+    filter: blur(0);
+}
+
+.welcome-section.signup h2 {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+}
+
+/* =====================================================
+   WELCOME TEXT
+===================================================== */
+
+.welcome-section h2 {
+    color: #fff;
+
+    text-transform: uppercase;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   BACKGROUND SHAPE
+===================================================== */
+
+.auth-wrapper .background-shape {
+    position: absolute;
+
+    right: 0;
+    top: -5px;
+
+    width: 850px;
+    height: 600px;
+
+    background:
+        linear-gradient(45deg,
+            #1a1a2e,
+            #00d4ff);
+
+    transform:
+        rotate(10deg) skewY(35deg);
+
+    transform-origin: bottom right;
+
+    transition: 1.5s ease;
+
+    transition-delay: 1.6s;
+
+    z-index: 2;
+}
+
+
+.auth-wrapper.toggled .background-shape {
+    transform:
+        rotate(0deg) skewY(0deg);
+
+    transition-delay: 0.5s;
+}
+
+
+/* =====================================================
+   SECONDARY SHAPE
+===================================================== */
+
+.auth-wrapper .secondary-shape {
+    position: absolute;
+
+    left: 250px;
+    top: 100%;
+
+    width: 850px;
+    height: 800px;
+
+    background: #1a1a2e;
+
+    border-top: 3px solid #00d4ff;
+
+    transform:
+        rotate(0deg) skewY(0deg);
+
+    transform-origin: bottom left;
+
+    transition: 1.5s ease;
+
+    transition-delay: 0.5s;
+
+    z-index: 3;
+}
+
+
+.auth-wrapper.toggled .secondary-shape {
+    transform:
+        rotate(-11deg) skewY(-41deg);
+
+    transition-delay: 1.2s;
+}
+
+/* =====================================================
+   ROLE SELECTION ANIMATION
+===================================================== */
+
+/* Hidden while Login page is active */
+
+.credentials-panel.signup .role-selection {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+}
+
+
+/* Visible when Register page is active */
+
+.auth-wrapper.toggled .credentials-panel.signup .role-selection {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+
+    transition-delay: 0.2s;
+}
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+/* @media (max-width: 768px) {
+
+    .auth-container {
+        min-height: calc(100vh - 68px);
+        padding: 20px 12px;
+        align-items: center;
+    }
+
+    .auth-wrapper {
+        width: 100%;
+        max-width: 500px;
+        min-height: 560px;
+        height: auto;
+
+        border-width: 1px;
+        box-shadow: 0 0 18px rgba(0, 212, 255, 0.45);
+
+        overflow: hidden;
+    }
+
+    /* Hide desktop welcome panels */
+/* .welcome-section {
+        display: none;
+    } */
+
+/* Hide desktop diagonal shapes */
+/* .auth-wrapper .background-shape,
+    .auth-wrapper .secondary-shape {
+        display: none;
+    } */
+
+/* Login/Register panel */
+/* .auth-wrapper .credentials-panel {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        min-height: 560px;
+
+        padding: 40px 35px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .credentials-panel.signin,
+    .credentials-panel.signup {
+        left: auto;
+        right: auto;
+    }
+
+    .credentials-panel.signup {
+        padding: 35px;
+    }
+
+    .credentials-panel h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .field-wrapper {
+        height: 44px;
+        margin-top: 20px;
+    }
+
+    .field-wrapper input {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .role-selection {
+        gap: 10px;
+    }
+
+    .role-card {
+        width: 110px;
+        height: 38px;
+    }
+
+    .switch-link {
+        margin-top: 18px;
+    } */
+/* } */
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+/* @media (max-width: 480px) {
+
+    .auth-container {
+        padding: 15px 10px;
+    }
+
+    .auth-wrapper {
+        width: 100%;
+        min-height: 520px;
+        border-radius: 8px;
+    }
+
+    .auth-wrapper .credentials-panel {
+        min-height: 520px;
+        padding: 35px 22px;
+    }
+
+    .credentials-panel.signup {
+        padding: 30px 22px;
+    }
+
+    .credentials-panel h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .field-wrapper {
+        height: 42px;
+        margin-top: 18px;
+    }
+
+    .field-wrapper input {
+        font-size: 13px;
+    }
+
+    .field-wrapper label {
+        font-size: 13px;
+    }
+
+    .field-wrapper i {
+        font-size: 14px;
+    }
+
+    .role-selection {
+        gap: 8px;
+    }
+
+    .role-card {
+        width: 100px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+    .role-card i {
+        font-size: 11px;
+    }
+
+    .submit-button {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .switch-link {
+        font-size: 11px;
+    }
+
+    .error-message {
+        font-size: 12px;
+        padding: 7px 8px;
+    }
+} */
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+/* @media (max-width: 360px) {
+
+
+    .auth-container {
+        padding: 10px 6px;
+    }
+
+    .auth-wrapper .credentials-panel {
+        padding: 30px 18px;
+    }
+
+    .credentials-panel.signup {
+        padding: 25px 18px;
+    }
+
+    .credentials-panel h2 {
+        font-size: 22px;
+    }
+
+    .role-card {
+        width: 92px;
+    }
+
+    .field-wrapper {
+        margin-top: 16px;
+    }
+} */
+
+/* =====================================================
+   AUTH RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .auth-container {
+        min-height: calc(100vh - 68px);
+        width: 100%;
+        padding: 20px 15px;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .auth-wrapper {
+        width: 100%;
+        max-width: 430px;
+        min-height: 0;
+        height: auto;
+
+        border-radius: 10px;
+        overflow: hidden;
+
+        position: relative;
+    }
+
+
+    /* =========================================
+       HIDE DESKTOP WELCOME SIDE
+    ========================================= */
+
+    .welcome-section {
+        display: none !important;
+    }
+
+
+    /* =========================================
+       REMOVE DESKTOP BACKGROUND SHAPES
+    ========================================= */
+
+    .background-shape,
+    .secondary-shape {
+        display: none !important;
+    }
+
+
+    /* =========================================
+       FORM PANEL
+    ========================================= */
+
+    .credentials-panel {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        box-sizing: border-box;
+
+        padding: 40px 35px !important;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .credentials-panel.signin,
+    .credentials-panel.signup {
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+    }
+
+
+    /* =========================================
+       TITLE
+    ========================================= */
+
+    .credentials-panel h2 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    /* =========================================
+       INPUTS
+    ========================================= */
+
+    .field-wrapper {
+        width: 100%;
+        height: 45px;
+        margin-top: 20px;
+    }
+
+    .field-wrapper input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+
+    /* =========================================
+       ROLE SELECTION
+    ========================================= */
+
+    .role-selection {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .role-card {
+        width: 110px;
+        height: 38px;
+    }
+
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .submit-button {
+        width: 100%;
+        height: 44px;
+        margin-top: 20px;
+    }
+
+
+    /* =========================================
+       SWITCH LOGIN / REGISTER
+    ========================================= */
+
+    .switch-link {
+        text-align: center;
+        margin-top: 18px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .auth-container {
+        padding: 15px 10px;
+    }
+
+    .auth-wrapper {
+        max-width: 380px;
+    }
+
+    .credentials-panel {
+        padding: 32px 25px !important;
+    }
+
+    .credentials-panel h2 {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .field-wrapper {
+        height: 42px;
+        margin-top: 17px;
+    }
+
+    .field-wrapper input {
+        font-size: 13px;
+    }
+
+    .role-selection {
+        gap: 8px;
+    }
+
+    .role-card {
+        width: 100px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .submit-button {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .switch-link {
+        font-size: 11px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .auth-container {
+        padding: 10px 8px;
+    }
+
+    .credentials-panel {
+        padding: 28px 20px !important;
+    }
+
+    .credentials-panel h2 {
+        font-size: 23px;
+    }
+
+    .field-wrapper {
+        margin-top: 15px;
+    }
+
+    .role-card {
+        width: 90px;
+    }
+}
