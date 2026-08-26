@@ -41,6 +41,7 @@ public class SecurityConfig {
 	        
 	        	.cors(cors -> {})
 	        	.authorizeHttpRequests(auth -> auth
+	        			.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 	        			.requestMatchers("/api/auth/**").permitAll()
 	        			// Users + Admins can view categories
 	        	        .requestMatchers(HttpMethod.GET, "/api/categories/**").authenticated()
