@@ -11,7 +11,7 @@ import Auth from "./Auth";
 import UserDashboard from "./UserDashboard";
 import AdminDashboard from "./AdminDashboard";
 import Profile from "./Profile";
-import "./DashboardBackground.css";
+import "./DashBoardBackground.css";
 /* ==============================
    PROTECTED ROUTE
 ============================== */
