@@ -49,7 +49,7 @@ const UserDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                "http://localhost:8080/api/transactions/summary",
+                "https://moneyflow-ws6d.onrender.com/api/transactions/summary",
                 {
                     method: "GET",
                     headers: {
@@ -106,7 +106,7 @@ const UserDashboard = () => {
             const month = selectedDate.getMonth() + 1;
 
             const response = await fetch(
-                `http://localhost:8080/api/transactions/monthly/${year}/${month}`,
+                `https://moneyflow-ws6d.onrender.com/api/transactions/monthly/${year}/${month}`,
                 {
                     method: "GET",
                     headers: {
@@ -145,7 +145,7 @@ const UserDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                "http://localhost:8080/api/transactions/user",
+                "https://moneyflow-ws6d.onrender.com/api/transactions/user",
                 {
                     method: "GET",
                     headers: {
@@ -330,7 +330,7 @@ const UserDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/transactions/${id}`,
+                `https://moneyflow-ws6d.onrender.com/api/transactions/${id}`,
                 {
                     method: "DELETE",
                     headers: {

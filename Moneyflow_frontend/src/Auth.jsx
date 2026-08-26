@@ -54,7 +54,7 @@ const Auth = ({ mode }) => {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/login",
+        "https://moneyflow-ws6d.onrender.com/api/auth/login",
         {
           method: "POST",
 
@@ -142,7 +142,7 @@ const Auth = ({ mode }) => {
       ============================== */
 
       const userResponse = await fetch(
-        `http://localhost:8080/api/users/email/${encodeURIComponent(decodedToken.sub)}`,
+        `https://moneyflow-ws6d.onrender.com/api/users/email/${encodeURIComponent(decodedToken.sub)}`,
         {
           method: "GET",
           headers: {
@@ -243,7 +243,7 @@ const Auth = ({ mode }) => {
       if (role === "USER") {
 
         endpoint =
-          "http://localhost:8080/api/auth/register/user";
+          "https://moneyflow-ws6d.onrender.com/api/auth/register/user";
 
         requestBody = {
 
@@ -266,7 +266,7 @@ const Auth = ({ mode }) => {
       else {
 
         endpoint =
-          "http://localhost:8080/api/auth/register/admin";
+          "https://moneyflow-ws6d.onrender.com/api/auth/register/admin";
 
         requestBody = {
 

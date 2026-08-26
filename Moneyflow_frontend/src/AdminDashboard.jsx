@@ -74,7 +74,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                "http://localhost:8080/api/categories",
+                "https://moneyflow-ws6d.onrender.com/api/categories",
                 {
                     method: "POST",
                     headers: {
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/categories/${id}`,
+                `https://moneyflow-ws6d.onrender.com/api/categories/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -163,7 +163,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/categories/${editingCategory.id}`,
+                `https://moneyflow-ws6d.onrender.com/api/categories/${editingCategory.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -207,7 +207,7 @@ const AdminDashboard = () => {
             setCategoryError("");
 
             const response = await fetch(
-                "http://localhost:8080/api/categories",
+                "https://moneyflow-ws6d.onrender.com/api/categories",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -249,7 +249,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/admin/transactions/${id}`,
+                `https://moneyflow-ws6d.onrender.com/api/admin/transactions/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -283,7 +283,7 @@ const AdminDashboard = () => {
             setTransactionError("");
 
             const response = await fetch(
-                "http://localhost:8080/api/admin/transactions",
+                "https://moneyflow-ws6d.onrender.com/api/admin/transactions",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -314,7 +314,7 @@ const AdminDashboard = () => {
 
 
             const response = await fetch(
-                "http://localhost:8080/api/users",
+                "https://moneyflow-ws6d.onrender.com/api/users",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -347,7 +347,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/users/${editingUser.id}`,
+                `https://moneyflow-ws6d.onrender.com/api/users/${editingUser.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -388,7 +388,7 @@ const AdminDashboard = () => {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/admin/summary",
+                "https://moneyflow-ws6d.onrender.com/api/admin/summary",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -426,7 +426,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken")
 
             const response = await fetch(
-                `http://localhost:8080/api/admin/users/${userId}`,
+                `https://moneyflow-ws6d.onrender.com/api/admin/users/${userId}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -453,7 +453,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/admin/user/${userId}/role?role=USER`,
+                `https://moneyflow-ws6d.onrender.com/api/admin/user/${userId}/role?role=USER`,
                 {
                     method: "PUT",
                     headers: {
@@ -495,7 +495,7 @@ const AdminDashboard = () => {
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:8080/api/admin/user/${userId}/role?role=ADMIN`,
+                `https://moneyflow-ws6d.onrender.com/api/admin/user/${userId}/role?role=ADMIN`,
                 {
                     method: "PUT",
                     headers: {
@@ -533,7 +533,7 @@ const AdminDashboard = () => {
             setTransactionsLoading(true);
 
             const response = await fetch(
-                `http://localhost:8080/api/admin/users/${userId}/transactions`,
+                `https://moneyflow-ws6d.onrender.com/api/admin/users/${userId}/transactions`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

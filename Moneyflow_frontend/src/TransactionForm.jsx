@@ -62,7 +62,7 @@ const TransactionForm = ({
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                "http://localhost:8080/api/categories",
+                "https://moneyflow-ws6d.onrender.com/api/categories",
                 {
                     method: "POST",
 
@@ -141,8 +141,8 @@ const TransactionForm = ({
             };
 
             const url = editingTransaction
-                ? `http://localhost:8080/api/transactions/${editingTransaction.id}`
-                : "http://localhost:8080/api/transactions";
+                ? `https://moneyflow-ws6d.onrender.com/api/transactions/${editingTransaction.id}`
+                : "https://moneyflow-ws6d.onrender.com/api/transactions";
 
             const method = editingTransaction ? "PUT" : "POST";
 
@@ -198,7 +198,7 @@ const TransactionForm = ({
             const token = localStorage.getItem("authToken");
 
             const response = await fetch(
-                "http://localhost:8080/api/categories",
+                "https://moneyflow-ws6d.onrender.com/api/categories",
                 {
                     method: "GET",
                     headers: {

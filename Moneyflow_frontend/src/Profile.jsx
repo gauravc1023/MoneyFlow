@@ -28,7 +28,7 @@ const Profile = () => {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/users/me",
+                "https://moneyflow-ws6d.onrender.com/api/users/me",
                 {
                     method: "GET",
                     headers: {
@@ -76,7 +76,7 @@ const Profile = () => {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/users/profile",
+                "https://moneyflow-ws6d.onrender.com/api/users/profile",
                 {
                     method: "PUT",
                     headers: {
@@ -128,7 +128,7 @@ const Profile = () => {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/users/change-password",
+                "https://moneyflow-ws6d.onrender.com/api/users/change-password",
                 {
                     method: "PUT",
                     headers: {
