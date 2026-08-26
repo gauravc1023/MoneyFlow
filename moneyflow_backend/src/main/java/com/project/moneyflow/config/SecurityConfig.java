@@ -35,7 +35,7 @@ public class SecurityConfig {
 	}
 	
 	 @Bean
-	 SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 	        http.csrf(csrf -> csrf.disable())
 	        
@@ -68,7 +68,7 @@ public class SecurityConfig {
 		 
 		 CorsConfiguration configuration = new CorsConfiguration();
 		 
-		 configuration.setAllowedOriginPatterns( List.of("http://localhost:5173","http://localhost:5174") );
+		 configuration.setAllowedOriginPatterns( List.of("https://moneyflow-1-bngs.onrender.com") );
 		 
 		 configuration.setAllowedMethods( List.of("GET","POST","PUT","DELETE","OPTIONS"));
 		 
